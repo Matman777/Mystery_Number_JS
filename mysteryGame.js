@@ -19,9 +19,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (isNaN(guess) || guess < 0 || guess > 100) {
             gameMessages.textContent = "Enter a valid number between 0 and 100";
         }else if (guess > targetNumber) {
-            gameMessages.textContent = "Target number is smaller";
+            gameMessages.textContent = "";
+            setTimeout(() => { gameMessages.textContent = "Target number is smaller"; }, 300);
         }else if (guess < targetNumber) {
-            gameMessages.textContent = "Target number is bigger";
+            gameMessages.textContent = "";
+            setTimeout(() => { gameMessages.textContent = "Target number is bigger"; }, 300);
         }else {
             gameMessages.textContent = `Yes, it was ${targetNumber}! You found it in ${attempts} attempts!`;
             replayButton.style.display = 'block';
